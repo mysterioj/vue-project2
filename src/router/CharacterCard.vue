@@ -1,8 +1,5 @@
 <template>
     <div id="app">
-      <header>
-        <h1>Rick and Morty Characters</h1>
-      </header>
       <main>
         <div class="cards">
           <div class="card" v-for="character in filteredCharacters" :key="character.id">
@@ -28,7 +25,6 @@
             <option value="Dead">Dead</option>
             <option value="Unknown">Unknown</option>
           </select>
-          <button @click="applyFilters">Apply</button>
         </div>
       </footer>
     </div>
@@ -89,14 +85,15 @@
           await this.fetchCharacters();
         }
       },
-      async applyFilters() {
-        await this.fetchCharacters();
-      }
     }
   };
   </script>
   
   <style scoped>
-  /* Ваши стили здесь */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   </style>
   
